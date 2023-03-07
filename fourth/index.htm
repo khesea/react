@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Сложные компоненты в React</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      var destination = document.querySelector('#container');
+
+      class Square extends React.Component {
+        render() {
+          var squareStyle = {
+            height: 150,
+            backgroundColor: this.props.color,
+          };
+
+          return (
+            <div style={squareStyle}>
+
+            </div>
+          );
+        }
+      }
+
+      class Label extends React.Component {
+        render() {
+          var labelStyle = {
+            padding: 13,
+            margin: 0,
+            fontFamily: 'sans-serif',
+            fontWeight: 'bold',
+          };
+
+          return (
+            <p style={labelStyle}>{this.props.color}</p>
+          );
+        }
+      }
+
+      class Card extends React.Component {
+        render() {
+          var cardStyle = {
+            height: 200,
+            width: 150,
+            padding: 0,
+            backgroundColor: "#fff",
+            boxShadow: "0px 0px 5px #666"
+          };
+
+          return (
+            <div style={cardStyle}>
+              <Square color={this.props.color} />
+              <Label color={this.props.color} />
+            </div>
+          );
+        }
+      }
+
+      class Container extends React.Component {
+        render() {
+          var containerStyle = {
+            display: "flex",
+            gap: 30,
+          }
+
+          return (
+            <div style={containerStyle}>
+              <Card color="#FFA737" />
+              <Card color="#FF6663" />
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <div>
+          <Container/>
+        </div>,
+        destination
+      );
+    </script>
+  </body>
+</html>
