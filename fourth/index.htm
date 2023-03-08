@@ -11,7 +11,7 @@
     <div id="container"></div>
     <script type="text/babel">
       var destination = document.querySelector('#container');
-  
+
       class Square extends React.Component {
         render() {
           var squareStyle = {
@@ -61,6 +61,18 @@
         }
       }
 
+      var colors = [];
+      for (var i = 0; i < 40; i++) {
+        var qwerty = '#' + Math.floor(Math.random()*16777215).toString(16);
+        colors.push(qwerty);
+      }
+
+      var renderData = [];
+      for (var i = 0; i < colors.length; i++) {
+        var color = colors[i];
+        renderData.push(<Card key={i + color} color={color} />);
+      }
+
       class Container extends React.Component {
         render() {
           var containerStyle = {
@@ -74,47 +86,7 @@
 
           return (
             <div style={containerStyle}>
-              <Card color="#FFA737" />
-              <Card color="#FF6663" />
-              <Card color="#339999" />
-              <Card color="#6699CC" />
-              <Card color="#990000" />
-              <Card color="#FF0099" />
-              <Card color="#336666" />
-              <Card color="#00CC33" />
-              <Card color="#669900" />
-              <Card color="#CCCC33" />
-              <Card color="#CCFF99" />
-              <Card color="#99CCCC" />
-              <Card color="#9966CC" />
-              <Card color="#CC9999" />
-              <Card color="#FFCC00" />
-              <Card color="#FFFFCC" />
-              <Card color="#FF6666" />
-              <Card color="#000033" />
-              <Card color="#669966" />
-              <Card color="#66FF99" />
-
-              <Card color="#FFFF66" />
-              <Card color="#99CC99" />
-              <Card color="#FFFFFF" />
-              <Card color="#333333" />
-              <Card color="#00CCFF" />
-              <Card color="#FFCC00" />
-              <Card color="#FF9900" />
-              <Card color="#666600" />
-              <Card color="#CC9999" />
-              <Card color="#993399" />
-              <Card color="#9933CC" />
-              <Card color="#CCCCFF" />
-              <Card color="#9999CC" />
-              <Card color="#3366FF" />
-              <Card color="#0066CC" />
-              <Card color="#00FFCC" />
-              <Card color="#00FF66" />
-              <Card color="#33CC00" />
-              <Card color="#99CC00" />
-              <Card color="#CCCC99" />
+              {renderData}
             </div>
           );
         }
