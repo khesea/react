@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Работа с состояниями</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      var destination = document.querySelector('#container');
+      class LightningCounter extends React.Component {
+        constructor(props) {
+          super(props);
+
+          this.state = {
+            strikes: 0
+          };
+          this.timerTick = this.timerTick.bind(this);
+        }
+
+        timerTick() {
+          this.setState((prevState) => {
+            return {
+              strikes: this.state.strikes + 100
+            };
+          });
+        }
+
+        componentDidMount() {
+          setInterval(this.timerTick, 1000);
+        }
+
+        render() {
+          return (
+            <h1>{this.state.strikes}</h1>
+          );
+        }
+      }
+
+      class LightningCounterDisplay extends React.Component {
+        render() {
+          var commonStyle = {
+            margin: 0,
+            padding: 0
+          }
+
+          var divStyle = {
+            width: 250,
+            textAlign: "center",
+            backgroundColor: "beige",
+            padding: 40,
+            fontFamily:"sans-serif",
+            color: "#aqua",
+            borderRadius: 10,
+          }
+
+          var textStyle = {
+            emphasis: {
+              fontSize: 18,
+              ...commonStyle
+            },
+
+            smallEmpasis: {
+              fontSize: 17,
+              opacity: 0.5,
+              ...commonStyle
+            }
+          };
+
+          return (
+            <div style={divStyle}>
+              <LightningCounter />
+              <h2 style={textStyle.smallEmpasis}>Вспышки молнии</h2>
+              <h2 style={textStyle.emphasis}>НА ПЛАНЕТЕ</h2>
+              <p style={textStyle.small}>(с момента запуска страницы)</p>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <LightningCounterDisplay />,
+        destination
+      )
+    </script>
+  </body>
+</html>
