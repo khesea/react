@@ -1,0 +1,17 @@
+.todoList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.todoList span {
+  word-wrap: break-word;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #669999;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
