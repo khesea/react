@@ -1,8 +1,6 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 30px;
 }
 .main .formField form {
@@ -26,4 +24,9 @@
   background-color: #666699;
   color: #CCFFCC;
   cursor: pointer;
+  transition: .5s;
+}
+
+.main .formField form button:hover {
+  background-color: #996666;
 }
