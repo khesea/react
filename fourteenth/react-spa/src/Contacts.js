@@ -4,7 +4,7 @@ class Contacts extends Component {
   render() {
     return (
       <div>
-        <p>Если у вас остались какие-либо вопросы, задайте их на форуме <a href="https://forum.kirupa.com">Кирупы Чиннатхамби</a></p>
+        <p>Если у вас остались какие-либо вопросы, задайте их на форуме <a href="https://forum.kirupa.com" target="_blank">Кирупы Чиннатхамби</a></p>
       </div>
     );
   }
