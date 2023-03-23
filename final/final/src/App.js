@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import {
-  Routes,
-  Route,
-  NavLink,
   HashRouter,
+  NavLink,
+  Routes,
+  Route
 } from "react-router-dom";
 import Hello from "./Hello";
 import TodoListContainer from "./TodoListContainer";
@@ -17,7 +17,7 @@ class App extends Component {
       <HashRouter>
         <div>
           <h1>Простое SPA-приложение, резюмирующее книгу Кирупы</h1>
-          <ul className="header">
+          <ul className="headerLinks">
             <li><NavLink to="/">hello</NavLink></li>
             <li><NavLink to="/todoList">to-do list</NavLink></li>
             <li><NavLink to="/menu">menu</NavLink></li>
@@ -25,10 +25,10 @@ class App extends Component {
           </ul>
           <div className="content">
             <Routes>
-              <Route path="/" Component={Hello} />
-              <Route path="/todoList" Component={TodoListContainer} />
-              <Route path="/menu" Component={Menu} />
-              <Route path="/thanks" Component={Thanks} />
+              <Route path="/" Component={Hello}/>
+              <Route path="/todoList" Component={TodoListContainer}/>
+              <Route path="/menu" Component={Menu}/>
+              <Route path="/thanks" Component={Thanks}/>
             </Routes>
           </div>
         </div>

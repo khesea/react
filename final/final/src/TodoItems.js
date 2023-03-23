@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import FlipMove from "react-flip-move";
 
 class TodoItems extends Component {
   constructor(props) {
@@ -7,8 +8,13 @@ class TodoItems extends Component {
     this.createTasks = this.createTasks.bind(this);
   }
 
+  delete(key) {
+    this.props.delete(key);
+  }
+
   createTasks(item) {
-    return <li key={item.key}>{item.text}</li>
+    return <li onClick={() => this.delete(item.key)}
+    key={item.key}>{item.text}</li>
   }
 
   render() {
@@ -16,7 +22,9 @@ class TodoItems extends Component {
     var listItems = todoEntries.map(this.createTasks);
     return (
       <ul className="theList">
-        {listItems}
+        <FlipMove duration={300} easing="ease-out">
+          {listItems}
+        </FlipMove>
       </ul>
     );
   }

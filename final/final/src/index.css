@@ -1,0 +1,37 @@
+body {
+  background-color: #ffcc00;
+  padding: 20px;
+  margin: 0;
+}
+
+h1, h2, p, ul, li {
+  font-family: sans-serif;
+}
+
+.headerLinks li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+
+.headerLinks {
+  background-color: #111;
+  padding: 0;;
+}
+
+.headerLinks li a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+
+.content {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.active {
+  background-color: #0099ff;
+}
