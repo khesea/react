@@ -37,8 +37,7 @@ class TodoListContainer extends Component {
       <div className="todoListMain">
         <div className="header">
           <form onSubmit={this.addItem}>
-            <input
-            ref={(a) => this._inputElement = a}
+            <input ref={(a) => this._inputElement = a} 
             placeholder="введите задачу"></input>
             <button type="submit">ok</button>
           </form>

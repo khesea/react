@@ -1,20 +1,20 @@
 import React, {Component} from "react";
 import {
   Routes,
+  Route,
   NavLink,
-  BrowserRouter,
-  Route
+  HashRouter,
 } from "react-router-dom";
 import Hello from "./Hello";
 import TodoListContainer from "./TodoListContainer";
 import Menu from "./Menu";
-import Thanks from "./Thanks"
+import Thanks from "./Thanks";
 
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div>
           <h1>Простое SPA-приложение, резюмирующее книгу Кирупы</h1>
           <ul className="header">
@@ -32,7 +32,7 @@ class App extends Component {
             </Routes>
           </div>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
