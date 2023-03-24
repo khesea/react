@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <HashRouter>
         <div>
-          <h1>Простое SPA-приложение, резюмирующее книгу Кирупы</h1>
+          <h1 className="mainHeader">Simple SPA-App</h1>
           <ul className="headerLinks">
             <li><NavLink to="/">hello</NavLink></li>
             <li><NavLink to="/todoList">to-do list</NavLink></li>

@@ -2,10 +2,16 @@ body {
   background-color: #ffcc00;
   padding: 20px;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-h1, h2, p, ul, li {
-  font-family: sans-serif;
+.mainHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  font-size: 60px;
+  color: #006666;
 }
 
 .headerLinks li {
